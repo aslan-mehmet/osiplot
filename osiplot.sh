@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # author: Mehmet ASLAN
-# date: December 10, 2016
+# date: May 17, 2017
 #
 # no warranty, no licence agreement
 # use it at your own risk
