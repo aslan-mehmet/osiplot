@@ -1,11 +1,13 @@
 #!/bin/bash
 #
 # author: Mehmet ASLAN
-# date: May 17, 2017
+# date: December 10, 2016
 #
 # no warranty, no licence agreement
 # use it at your own risk
 #
+# please use more recent version
+# older version here if mess up
 
 # alias osiplot='osiplot $(pwd)'
 
@@ -61,6 +63,9 @@ function unit_converter {
 
     coef=
     case $first in
+	n)
+	    coef=e-09
+	    ;;
 	u)
 	    coef=e-06
 	    ;;
@@ -172,7 +177,7 @@ do
     key="set key title '$time s' at $stop,$vb1 font ',10'"
     link="set label 'github.com/aslan-mehmet/osiplot' at $start,$vb1-$vs1/5 font ',10'"
     
-    echo  $file $n1 $vs1 $vp1 $n2 $vs2 $vp2 $time $delay $start $stop
+    echo  $file $chx $n1 $vs1 $vp1 $n2 $vs2 $vp2 $time $delay $start $stop
 
     echo "
 set datafile separator ','
@@ -202,6 +207,23 @@ quit
 " > $file.plt
     
     gnuplot -e "load '$file.plt'"
+
+    # bash remember created vars in a loop
+    # fresh start
+    file=''
+    chx=''
+    n1=''
+    vs1=''
+    n2=''
+    vs2=''
+    vp2=''
+    time=''
+    delay=''
+    start=''
+    stop=''
+    p2=''
+    y2=''
+    ar2=''
 done
 
 cp *.pdf $path
