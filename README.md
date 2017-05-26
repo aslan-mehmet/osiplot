@@ -1,5 +1,3 @@
-# osiplot
-
 Description
 	Ds1072ca plotting script. Plots exactly what you see in scope. Needs
 channel parameters and csv files. Creates gnuplot script in /tmp directory.
